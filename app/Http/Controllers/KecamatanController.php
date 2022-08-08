@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 class KecamatanController extends Controller
 {
-    public function index(){
+    public function show(){
+        return view('kecamatan.show');
+    }
 
+    public function create(){
+        return view('kecamatan.create');
     }
 
     public function update(){
@@ -19,6 +23,7 @@ class KecamatanController extends Controller
     }
 
     public function edit(){
+        return view('kecamatan.edit');
 
     }
 

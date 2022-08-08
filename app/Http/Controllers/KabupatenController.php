@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 class KabupatenController extends Controller
 {
-    public function index(){
-        return view();
+    public function show(){
+        return view('kabupaten.show');
+    }
+
+    public function create(){
+        return view('desa.create');
     }
 
     public function update(){
@@ -19,7 +23,7 @@ class KabupatenController extends Controller
     }
 
     public function edit(){
-
+        return view('desa.edit');
     }
 
     public function delete(){

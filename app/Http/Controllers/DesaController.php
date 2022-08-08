@@ -6,8 +6,13 @@ use Illuminate\Http\Request;
 
 class DesaController extends Controller
 {
-    public function index(){
+    public function show(){
+        return view('desa.show');
+    }
 
+    public function create()
+    {
+        return view('desa.create');
     }
 
     public function update(){
@@ -19,7 +24,7 @@ class DesaController extends Controller
     }
 
     public function edit(){
-
+        return view('desa.edit');
     }
 
     public function delete(){
