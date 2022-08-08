@@ -1,12 +1,12 @@
 
-<x-volt-app title="{{Str::of($category)->replace('-', ' ')->title()}}">
+<x-volt-app title="Desa">
 
     <x-slot name="actions">
         <x-laravolt::backlink url="{{ url('/cms/'.$category) }}"/>
     </x-slot>
-    <x-volt-panel title="Tambah Artikel">
-        {!! form()->open()->route('articles.store',['category'=>$category])->multipart()->attribute('novalidate','') !!}
-        {!! form()->text('title')->label('Judul')->required() !!}
+    <x-volt-panel title="Tambah Desa">
+        {!! form()->open()->route('desa.store',['category'=>$category])->multipart()->attribute('novalidate','') !!}
+        {!! form()->text('desa')->label('Nama Desa')->required() !!}
         {!! form()->redactor('content')->label('Deskripsi')->required() !!}
         {!! form()->dropdown('status', ['publish'=>'Publish','draft'=>'Draft'])->label('Status')->required()->removeClass('clearable')->removeClass('search'); !!}
         {!! form()->uploader('featured_image')->limit(1)->fileMaxSize(5)->label('Media')->extensions(['jpg', 'png','jpeg','mp4','mpeg4'])->hint('Format file harus PNG, JPG/JPEG, MP4/MPEG4')!!}

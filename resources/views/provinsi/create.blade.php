@@ -6,7 +6,7 @@
     <x-slot name="actions">
         <x-laravolt::backlink url="{{ url('/cms/'.$category) }}"/>
     </x-slot>
-    <x-volt-panel title="Tambah Artikel">
+    <x-volt-panel title="Tambah Provinsi">
         {!! form()->open()->route('articles.store',['category'=>$category])->multipart()->attribute('novalidate','') !!}
         {!! form()->text('title')->label('Judul')->required() !!}
         {!! form()->redactor('content')->label('Deskripsi')->required() !!}

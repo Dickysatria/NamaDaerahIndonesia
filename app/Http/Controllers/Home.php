@@ -9,6 +9,6 @@ class Home extends Controller
 {
     public function __invoke(Request $request): View
     {
-        return view('home');
+        return view('homepage.index');
     }
 }

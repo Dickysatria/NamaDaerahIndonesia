@@ -3,18 +3,9 @@
 use App\Http\Controllers\BackupController;
 use App\Http\Controllers\Home;
 
-Route::redirect('/', 'auth/login');
 
-Route::middleware(['auth', 'verified'])
-    ->group(
-        function () {
-            Route::get('/home', Home::class)->name('home');
-        }
-    );
-
-include __DIR__.'/auth.php';
-include __DIR__.'/my.php';
-
+Route::get('/', Home::class)->name('index');
+Route::get('/biografi');
 
 
 Route::middleware(['auth'])
@@ -27,11 +18,17 @@ Route::middleware(['auth'])
             Route::resource('desa', DesaController::class)->except('index');
         });
 
-        Route::prefix('backup')->gorup(function(){
-            Route::get('/', BackupController::class, 'index');
-            Route::get('/create', BackupController::class, 'create');
-            Route::get('/download/{file_name}', BackupController::class, 'download');
-            Route::get('/delete/{file_name}', BackupController::class, 'delete');
+        Route::prefix('backup')->group(function(){
+            Route::get('/', [\App\Http\Controllers\BackupController::class, 'index']);
+            Route::get('create', [\App\Http\Controllers\BackupController::class, 'create']);
+            Route::get('download/{file_name}', [\App\Http\Controllers\BackupController::class, 'download']);
+            Route::get('delete/{file_name}', [\App\Http\Controllers\BackupController::class, 'delete']);
         });
         }
     );
+
+
+
+    include __DIR__.'/auth.php';
+    include __DIR__.'/my.php';
+
