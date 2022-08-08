@@ -9,20 +9,20 @@ use Tests\TestCase;
 
 class RedirectToHomeTest extends TestCase
 {
-    use DatabaseMigrations;
+    // use DatabaseMigrations;
 
-    /**
-     * @test
-     */
-    public function it_can_redirected_to_home()
-    {
-        /** @var \Illuminate\Contracts\Auth\Authenticatable $user */
-        $user = User::factory()->create();
+    // /**
+    //  * @test
+    //  */
+    // public function it_can_redirected_to_home()
+    // {
+    //     /** @var \Illuminate\Contracts\Auth\Authenticatable $user */
+    //     $user = User::factory()->create();
 
-        $this->actingAs($user);
+    //     $this->actingAs($user);
 
-        $response = $this->get(route('auth::login.show'));
+    //     $response = $this->get(route('auth::login.show'));
 
-        $response->assertRedirect(RouteServiceProvider::HOME);
-    }
+    //     $response->assertRedirect(RouteServiceProvider::HOME);
+    // }
 }
