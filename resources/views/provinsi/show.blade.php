@@ -1,10 +1,7 @@
 
 
 
-<x-volt-app title="{{Str::of($category)->replace('-', ' ')->title()}}">
-    <x-slot name="actions">
-        <x-laravolt::backlink url="{{ url('/cms/'.$category) }}"/>
-    </x-slot>
+<x-volt-app title="Provinsi">
     <x-volt-panel title="Detail Artikel" >
         <table class="ui definition table">
             <tbody>
